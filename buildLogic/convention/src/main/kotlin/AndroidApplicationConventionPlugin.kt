@@ -15,7 +15,6 @@
  */
 
 import com.android.build.api.dsl.ApplicationExtension
-import com.quick.dev.configureGradleManagedDevices
 import com.android.build.api.variant.ApplicationAndroidComponentsExtension
 import com.quick.dev.configureKotlinAndroid
 import com.quick.dev.configurePrintApksTask
@@ -42,7 +41,6 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                         useSupportLibrary = true
                     }
                 }
-                configureGradleManagedDevices(this)
 
                 buildFeatures {
                     viewBinding = true

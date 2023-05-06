@@ -1,4 +1,4 @@
-package com.example.chat
+package com.example.basefunction
 
 import org.junit.Test
 

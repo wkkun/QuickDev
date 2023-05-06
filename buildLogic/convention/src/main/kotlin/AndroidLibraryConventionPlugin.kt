@@ -14,13 +14,8 @@
  *   limitations under the License.
  */
 
-import com.android.build.api.variant.LibraryAndroidComponentsExtension
 import com.android.build.gradle.LibraryExtension
-import com.quick.dev.configureFlavors
-import com.quick.dev.configureGradleManagedDevices
 import com.quick.dev.configureKotlinAndroid
-import com.quick.dev.configurePrintApksTask
-import com.quick.dev.disableUnnecessaryAndroidTests
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -37,36 +32,16 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 configureKotlinAndroid(this)
                 defaultConfig{
                     minSdk = 23
-                    targetSdk = 33
                     compileSdk = 33
-                    multiDexEnabled = true
                     vectorDrawables {
                         useSupportLibrary = true
                     }
                 }
-                configureFlavors(this)
-                configureGradleManagedDevices(this)
-
                 buildFeatures {
                     viewBinding = true
                 }
             }
-            extensions.configure<LibraryAndroidComponentsExtension> {
-                configurePrintApksTask(this)
-                disableUnnecessaryAndroidTests(target)
-            }
-//            val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
-//            configurations.configureEach {
-//                resolutionStrategy {
-//                    force(libs.findLibrary("junit4").get())
-//                    // Temporary workaround for https://issuetracker.google.com/174733673
-//                    force("org.objenesis:objenesis:2.6")
-//                }
-//            }
-//            dependencies {
-//                add("androidTestImplementation", kotlin("test"))
-//                add("testImplementation", kotlin("test"))
-//            }
+
         }
     }
 }

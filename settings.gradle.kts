@@ -8,7 +8,6 @@ pluginManagement {
 }
 
 dependencyResolutionManagement {
-//    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
         google()
@@ -19,8 +18,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "QuickDev"
 include("app")
-println("This is executed during the initialization phase.")
-
+includeDir("base")
 
 
 
@@ -41,4 +39,3 @@ fun includeDir(dirName: String) {
         }
     }
 }
-include(":chat")
