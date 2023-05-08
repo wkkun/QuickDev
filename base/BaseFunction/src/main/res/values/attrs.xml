@@ -18,6 +18,12 @@
         </attr>
     </declare-styleable>
 
+    <declare-styleable name="CustomTitleView">
+        <attr name="title" format="string" />
+        <attr name="showCloseIcon" format="boolean" />
+        <attr name="showDivider" format="boolean" />
+        <attr name="dividerColor" format="color" />
+    </declare-styleable>
 
 
 </resources>
