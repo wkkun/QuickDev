@@ -28,4 +28,6 @@ dependencies {
     api(libs.lifecycleKtx)
     api(libs.livedataKtx)
     api(libs.viewmodelKtx)
+
+    api(project(":ScreenSupport"))
 }
